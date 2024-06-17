@@ -15,13 +15,13 @@ So I modified the switch statement after the trace as...
 ```js
 const onFullscreenUpdate = async ({ fullscreenUpdate }) => {
     switch (fullscreenUpdate) {
-      case 0 || 1:
+      case (0, 1):
         // should have been Video.FULLSCREEN_UPDATE_PLAYER_DID_PRESENT instead of 0 || 1
         // but Video.FULLSCREEN_UPDATE_PLAYER_DID_PRESENT comes undefined
         // console.log("Video.FULLSCREEN_UPDATE_PLAYER_DID_PRESENT:");
         await ScreenOrientation.unlockAsync(); // only on Android required
         break;
-      case 2 || 3:
+      case (2, 3):
         // should have been Video.FULLSCREEN_UPDATE_PLAYER_WILL_DISMISS: instead of 2 || 3
         // but Video.FULLSCREEN_UPDATE_PLAYER_WILL_DISMISS: comes undefined
         // console.log("Video.FULLSCREEN_UPDATE_PLAYER_DID_PRESENT:");
